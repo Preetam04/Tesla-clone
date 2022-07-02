@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: GothamSSm-Book_Web;
+  src: url(fonts/GothamSSm-Book_Web.woff2);
+}
+
+@font-face {
+  font-family: GothamSSm-Medium_Web;
+  src: url(fonts/GothamSSm-Medium_Web.woff2);
+}
+
+body {
+}
