@@ -7,6 +7,9 @@ module.exports = {
         "Gottham-book": ["GothamSSm-Book_Web"],
         "Gottham-medium": ["GothamSSm-Medium_Web"],
       },
+      animation: {
+        animateDown: "animateDown infinite 1.5s",
+      },
     },
   },
   plugins: [],
