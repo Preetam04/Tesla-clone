@@ -1,5 +1,6 @@
 import React from "react";
 // import styled from "styled-components";
+import Menu from "./Menu";
 
 function Header() {
   const style = {
@@ -10,31 +11,34 @@ function Header() {
   };
 
   return (
-    <nav className={style.container}>
-      <a href="/">
-        <img src="/images/logo.svg" alt="" className="w-[11rem] p-5 " />
-      </a>
+    <>
+      <nav className={style.container}>
+        <a href="/">
+          <img src="/images/logo.svg" alt="" className="w-[11rem] p-5 " />
+        </a>
 
-      <div className="w-[38rem] justify-between hidden xl:flex ">
-        <p className={style.navEle + " hidden xl:block "}>Model S</p>
-        <p className={style.navEle + " hidden xl:block"}>Model 3</p>
-        <p className={style.navEle + " hidden xl:block"}>Model X</p>
-        <p className={style.navEle + " hidden xl:block"}>Model Y</p>
-        <p className={style.navEle + " hidden xl:block"}>Solar Roof</p>
-        <p className={style.navEle + " hidden xl:block"}>Solar Panels</p>
-      </div>
-      <div className="flex justify-around w-fit xl:w-52">
-        <p className={style.navEle + " hidden xl:block"}>Shop</p>
-        <p className={style.navEle + " hidden xl:block"}>Account</p>
-        <p
-          className={
-            style.navEle + "bg-[#37393e] bg-opacity-[10%] xl:bg-transparent"
-          }
-        >
-          Menu
-        </p>
-      </div>
-    </nav>
+        <div className="w-[38rem] justify-between hidden xl:flex ">
+          <p className={style.navEle + " hidden xl:block "}>Model S</p>
+          <p className={style.navEle + " hidden xl:block"}>Model 3</p>
+          <p className={style.navEle + " hidden xl:block"}>Model X</p>
+          <p className={style.navEle + " hidden xl:block"}>Model Y</p>
+          <p className={style.navEle + " hidden xl:block"}>Solar Roof</p>
+          <p className={style.navEle + " hidden xl:block"}>Solar Panels</p>
+        </div>
+        <div className="flex justify-around w-fit xl:w-52">
+          <p className={style.navEle + " hidden xl:block"}>Shop</p>
+          <p className={style.navEle + " hidden xl:block"}>Account</p>
+          <p
+            className={
+              style.navEle + "bg-[#37393e] bg-opacity-[10%] xl:bg-transparent"
+            }
+          >
+            Menu
+          </p>
+        </div>
+      </nav>
+      <Menu />
+    </>
   );
 }
 

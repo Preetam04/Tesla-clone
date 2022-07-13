@@ -1,21 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import data from "../data.json";
+import Buttons from "./Buttons";
+import SubHead from "./SubHead";
+import Arrow from "./Arrow";
+import Menu from "./Menu";
 
 function Section() {
-  const carName = [
-    "model-3",
-    "model-Y",
-    "model-S",
-    "model-X",
-    "solar-panels",
-    "solar-roof",
-    "accessories",
-  ];
-
   const style = {
     container: "flex  flex-col items-center",
-    header: "text-4xl font-Gottham-medium mt-40 sm:text-[2.5rem]",
+    header: "text-4xl font-Gottham-medium mt-40 sm:text-[2.35rem]",
     subtext: "mt-3 font-Gottham-book text-sm",
     button:
       "font-Gottham-book w-5/6  rounded-full py-3  bg-opacity-80 text-xs sm:w-[17rem]",
@@ -23,30 +17,29 @@ function Section() {
       "flex flex-col absolute bottom-24 w-[100%]  items-center justify-between h-24 sm:flex-row sm:justify-around sm:w-[38rem]",
   };
 
+  const ele = Object.entries(data).map((ele) => ele);
+
   return (
     <>
-      {carName.map((car) => (
-        <Container bgImg={car} className={style.container}>
-          <h1 className={style.header}>Model 3</h1>
-          <p className={style.subtext}>
-            Order online for{" "}
-            <span className="underline underline-offset-4">
-              Touchless Delivery
-            </span>
-          </p>
-          <div className={style.buttonDiv}>
-            <button className={style.button + " text-white bg-[#171a20]"}>
-              CUSTOM ORDER
-            </button>
-            <button className={style.button + " bg-white text-[#171a20]"}>
-              EXISTING INVENTORY
-            </button>
-          </div>
-          <div className="rotate-90 absolute bottom-9">
-            <ArrowForwardIosIcon className=" !fill-[#393b3f] animate-animateDown  font-medium " />
-          </div>
-        </Container>
-      ))}
+      <Container>
+        {ele.map((e) => {
+          const [key, info] = e;
+          return (
+            <>
+              <Container1
+                key={key.toString()}
+                bgImg={info.image}
+                className={style.container}
+              >
+                <h1 className={style.header + ""}>{info.name}</h1>
+                <SubHead info={info} />
+                <Buttons info={info} />
+                <Arrow info={info} />
+              </Container1>
+            </>
+          );
+        })}
+      </Container>
     </>
   );
 }
@@ -54,6 +47,12 @@ function Section() {
 export default Section;
 
 const Container = styled.div`
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+`;
+
+const Container1 = styled.div`
   position: relative;
   z-index: 2;
   background: ${(props) => `url('images/${props.bgImg}-mobile.jpg')`};
@@ -62,6 +61,7 @@ const Container = styled.div`
   width: 100%;
   background-size: cover;
   background-position: center;
+  scroll-snap-align: start;
 
   @media (min-width: 640px) {
     background-image: ${(props) => `url('images/${props.bgImg}.jpg')`};

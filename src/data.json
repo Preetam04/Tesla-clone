@@ -1,0 +1,44 @@
+{
+  "1": {
+    "name": "Model 3",
+    "type": "car",
+    "image": "model-3",
+    "show-arrow": true
+  },
+  "2": {
+    "name": "Model Y",
+    "type": "car",
+    "image": "model-Y",
+    "show-arrow": false
+  },
+  "3": {
+    "name": "Model S",
+    "type": "car",
+    "image": "model-S",
+    "show-arrow": false
+  },
+  "4": {
+    "name": "Model X",
+    "type": "car",
+    "image": "model-X",
+    "show-arrow": false
+  },
+  "5": {
+    "name": "Solar Panels",
+    "type": "panel",
+    "image": "solar-panels",
+    "show-arrow": false
+  },
+  "6": {
+    "name": "Solar Roofs",
+    "type": "roof",
+    "image": "solar-roof",
+    "show-arrow": false
+  },
+  "7": {
+    "name": "Accessories",
+    "type": "accessorie",
+    "image": "accessories",
+    "show-arrow": false
+  }
+}
