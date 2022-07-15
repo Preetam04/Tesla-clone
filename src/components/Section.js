@@ -1,15 +1,16 @@
-import React from "react";
+import { React, useState } from "react";
 import styled from "styled-components";
 import data from "../data.json";
 import Buttons from "./Buttons";
 import SubHead from "./SubHead";
 import Arrow from "./Arrow";
-import Menu from "./Menu";
 
 function Section() {
+  const [focusedSection, setfocusedSection] = useState(1);
+
   const style = {
     container: "flex  flex-col items-center",
-    header: "text-4xl font-Gottham-medium mt-40 sm:text-[2.35rem]",
+    header: "text-4xl font-Gottham-medium mt-48 sm:text-[2.35rem] duration-500",
     subtext: "mt-3 font-Gottham-book text-sm",
     button:
       "font-Gottham-book w-5/6  rounded-full py-3  bg-opacity-80 text-xs sm:w-[17rem]",
@@ -27,11 +28,20 @@ function Section() {
           return (
             <>
               <Container1
-                key={key.toString()}
+                key={e}
                 bgImg={info.image}
                 className={style.container}
               >
-                <h1 className={style.header + ""}>{info.name}</h1>
+                <h1
+                  className={
+                    +key === focusedSection
+                      ? `${style.header} opacity-100`
+                      : `${style.header} opacity-0`
+                  }
+                  id="header"
+                >
+                  {info.name}
+                </h1>
                 <SubHead info={info} />
                 <Buttons info={info} />
                 <Arrow info={info} />
@@ -52,7 +62,7 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-const Container1 = styled.div`
+const Container1 = styled.section`
   position: relative;
   z-index: 2;
   background: ${(props) => `url('images/${props.bgImg}-mobile.jpg')`};

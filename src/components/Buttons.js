@@ -12,19 +12,19 @@ function Buttons(props) {
     <div className={style.buttonDiv}>
       {props.info.type === "car" ? (
         <>
-          <button className={style.button + " text-white bg-[#171a20]"}>
+          <button className={`${style.button} text-white bg-[#171a20]`}>
             CUSTOM ORDER
           </button>
-          <button className={style.button + " bg-white text-[#171a20]"}>
+          <button className={`${style.button} bg-white text-[#171a20]`}>
             EXISTING INVENTORY
           </button>
         </>
       ) : props.info.type === "panel" || props.info.type === "roof" ? (
         <>
-          <button className={style.button + " text-white bg-[#171a20]"}>
+          <button className={`${style.button} text-white bg-[#171a20]`}>
             ORDER NOW
           </button>
-          <button className={style.button + " bg-white text-[#171a20]"}>
+          <button className={`${style.button} bg-white text-[#171a20]`}>
             LEARN MORE
           </button>
         </>
@@ -32,7 +32,7 @@ function Buttons(props) {
         <p className={style.subtext}>Produce Clean Energy From Your Roof</p>
       ) : (
         <button
-          className={style.button + " text-white bg-[#171a20] bg-opacity-100"}
+          className={`${style.button} text-white bg-[#171a20] bg-opacity-100`}
         >
           SHOP NOW
         </button>

@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,6 +25,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 @keyframes animateDown {
