@@ -39,8 +39,6 @@ function Menu({ visible, setMenuVisible }) {
     "Support",
     "Investor Relations",
   ];
-  // className={visible ? style.menuBgOpen : ""}
-  // onClick={() => setMenuVisible(!visible)}
   return (
     <>
       <div
@@ -59,20 +57,20 @@ function Menu({ visible, setMenuVisible }) {
           onClick={() => setMenuVisible(!visible)}
         />
 
-        <div className="flex flex-col xl:hidden ">
-          {arr1.map((ele) => (
+        {arr1.map((ele) => (
+          <div key={ele} className="flex flex-col xl:hidden ">
             <a href="#" className={`${style.optionsAnch} mt-2`}>
               <span className={style.options}>{ele}</span>
             </a>
-          ))}
-        </div>
-        <div className="flex flex-col">
-          {arr2.map((ele) => (
+          </div>
+        ))}
+        {arr2.map((ele) => (
+          <div key={ele} className="flex flex-col">
             <a href="#" className={`${style.optionsAnch} mt-2`}>
               <span className={style.options}>{ele}</span>
             </a>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </>
   );

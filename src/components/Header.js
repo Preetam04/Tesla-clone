@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-// import styled from "styled-components";
 import Menu from "./Menu";
 
 function Header() {
@@ -30,7 +29,9 @@ function Header() {
 
         <header className="w-[38rem] justify-between hidden xl:flex ">
           {arr1.map((ele) => (
-            <p className={`${style.navEle} hidden xl:block `}>{ele}</p>
+            <p key={ele} className={`${style.navEle} hidden xl:block `}>
+              {ele}
+            </p>
           ))}
         </header>
         <div className="flex justify-around w-fit xl:w-52">

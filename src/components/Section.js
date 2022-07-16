@@ -7,7 +7,7 @@ import Arrow from "./Arrow";
 import Footer from "./Footer";
 
 function Section() {
-  const [focusedSection, setfocusedSection] = useState(1);
+  // const [focusedSection, setfocusedSection] = useState(1);
 
   const style = {
     container: "flex  flex-col items-center",
@@ -29,12 +29,8 @@ function Section() {
           const [key, info] = e;
           type = info.type;
           return (
-            <>
-              <Container1
-                key={e}
-                bgImg={info.image}
-                className={style.container}
-              >
+            <div key={e}>
+              <Container1 bgImg={info.image} className={style.container}>
                 <h1 className={style.header} id="header">
                   {info.name}
                 </h1>
@@ -42,7 +38,7 @@ function Section() {
                 <Buttons info={info} />
                 <Arrow info={info} />
               </Container1>
-            </>
+            </div>
           );
         })}
         <Footer type={type} />
@@ -70,6 +66,7 @@ const Container1 = styled.section`
   background-size: cover;
   background-position: center;
   scroll-snap-align: start;
+  content-visibility: none;
 
   @media (min-width: 640px) {
     background-image: ${(props) => `url('images/${props.bgImg}.jpg')`};
