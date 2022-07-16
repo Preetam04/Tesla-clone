@@ -4,6 +4,7 @@ import data from "../data.json";
 import Buttons from "./Buttons";
 import SubHead from "./SubHead";
 import Arrow from "./Arrow";
+import Footer from "./Footer";
 
 function Section() {
   const [focusedSection, setfocusedSection] = useState(1);
@@ -19,12 +20,14 @@ function Section() {
   };
 
   const ele = Object.entries(data).map((ele) => ele);
+  let type;
 
   return (
     <>
       <Container>
         {ele.map((e) => {
           const [key, info] = e;
+          type = info.type;
           return (
             <>
               <Container1
@@ -32,14 +35,7 @@ function Section() {
                 bgImg={info.image}
                 className={style.container}
               >
-                <h1
-                  className={
-                    +key === focusedSection
-                      ? `${style.header} opacity-100`
-                      : `${style.header} opacity-0`
-                  }
-                  id="header"
-                >
+                <h1 className={style.header} id="header">
                   {info.name}
                 </h1>
                 <SubHead info={info} />
@@ -49,6 +45,7 @@ function Section() {
             </>
           );
         })}
+        <Footer type={type} />
       </Container>
     </>
   );
@@ -60,6 +57,7 @@ const Container = styled.div`
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+  position: relative;
 `;
 
 const Container1 = styled.section`
